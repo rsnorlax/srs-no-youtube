@@ -1,0 +1,68 @@
+name: Build Podkop Rules
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '13 6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-podkop-rules
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install sing-box
+        run: |
+          curl -fsSL https://sing-box.app/install.sh | sudo sh
+          sing-box version
+
+      - name: Build rules
+        env:
+          OUT_DIR: dist
+        run: |
+          mkdir -p dist
+          python3 build_podkop_rules.py
+
+      - name: Generate SHA256SUMS
+        run: |
+          cd dist
+          sha256sum \
+            ru-domains-no-youtube.srs \
+            ru-domains-no-youtube.json \
+            ru-domains-no-youtube.lst \
+            ru-ips-merged.srs \
+            ru-ips-merged.json \
+            ru-ips-merged.lst \
+            ru-rules-build-meta.json \
+            youtube_ip_exclude.txt \
+            > SHA256SUMS
+
+      - name: Commit and push dist
+        run: |
+          if git diff --quiet -- dist; then
+            echo 'No changes in dist/'
+            exit 0
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          git add dist
+          git commit -m "chore: rebuild podkop rules"
+          git push
