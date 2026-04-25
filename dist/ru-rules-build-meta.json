@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-24T08:20:20Z",
+  "generated_at_utc": "2026-04-25T07:43:29Z",
   "script_dir": "/home/runner/work/srs-no-youtube/srs-no-youtube",
   "output_dir": "dist",
   "domain_sources": [
@@ -64,15 +64,15 @@
   ],
   "domains_stats": {
     "raw_domain": 0,
-    "raw_domain_suffix": 84247,
+    "raw_domain_suffix": 84248,
     "raw_domain_keyword": 0,
     "raw_domain_regex": 0,
     "force_removed": 79,
     "final_domain": 0,
-    "final_domain_suffix": 82311,
+    "final_domain_suffix": 82312,
     "final_domain_keyword": 0,
     "final_domain_regex": 0,
-    "final_domain_lst_lines": 82311
+    "final_domain_lst_lines": 82312
   },
   "ips_stats": {
     "raw_ip_entries": 87246,
