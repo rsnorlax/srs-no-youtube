@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-26T07:52:54Z",
+  "generated_at_utc": "2026-04-27T08:40:16Z",
   "script_dir": "/home/runner/work/srs-no-youtube/srs-no-youtube",
   "output_dir": "dist",
   "domain_sources": [
@@ -64,7 +64,7 @@
   ],
   "domains_stats": {
     "raw_domain": 0,
-    "raw_domain_suffix": 84248,
+    "raw_domain_suffix": 84249,
     "raw_domain_keyword": 0,
     "raw_domain_regex": 0,
     "force_removed": 79,
