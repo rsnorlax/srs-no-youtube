@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-30T08:34:49Z",
+  "generated_at_utc": "2026-05-01T08:24:04Z",
   "script_dir": "/home/runner/work/srs-no-youtube/srs-no-youtube",
   "output_dir": "dist",
   "domain_sources": [
@@ -75,11 +75,11 @@
     "final_domain_lst_lines": 82312
   },
   "ips_stats": {
-    "raw_ip_entries": 87246,
-    "final_ip_cidrs": 87246,
+    "raw_ip_entries": 87273,
+    "final_ip_cidrs": 87273,
     "manual_ip_excludes_applied": 0,
     "removed_by_manual_file": 0,
-    "final_ip_lst_lines": 87246
+    "final_ip_lst_lines": 87273
   },
   "manual_ip_exclude_file": "dist/youtube_ip_exclude.txt",
   "domain_lst_file": "dist/ru-domains-no-youtube.lst",
